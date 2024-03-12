@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1><b>Task Scheduler</b></h1>
+    <br />
+    <br />
+    <p>
+      You are given an array of CPU tasks, each represented by letters A to Z,
+      and a cooling time, n.
+    </p>
+    <p>Each cycle or interval allows the completion of one task.</p>
+    <p>Tasks can be completed in any order, but there's a constraint:</p>
+    <p>
+      Identical tasks must be separated by at least n intervals due to cooling
+      time.
+    </p>
+    <br />
+    <br />
+    <input
+      type="text"
+      id="tasksInput"
+      placeholder='Enter tasks = ["A","C","A","B","D","B"]'
+    />
+    <br />
+    <br />
+    <input type="number" id="cooldownInput" placeholder="Enter cooldown time" />
+    <br />
+    <br />
+    <button id="submit">Submit</button>
+    <br />
+    <br />
+    <div id="output"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
