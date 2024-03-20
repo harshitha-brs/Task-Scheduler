@@ -35,3 +35,37 @@ var leastInterval = function(tasks, n) {
 
   return tasks.length + idleSlots;
 };
+
+document
+  .getElementById("tasksInput")
+  .addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleTaskScheduling();
+    }
+  });
+
+document
+  .getElementById("cooldownInput")
+  .addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleTaskScheduling();
+    }
+  });
+
+function handleTaskScheduling() {
+  const tasksInput = document.getElementById("tasksInput").value;
+  const cooldownInput = document.getElementById("cooldownInput").value;
+
+  try {
+    const tasks = JSON.parse(tasksInput.trim().replace(/'/g, '"'));
+    const cooldownTime = parseInt(cooldownInput.trim());
+
+    const result = leastInterval(tasks, cooldownTime);
+
+    document.getElementById("output").innerHTML = "<b>Output:</b> " + result;
+  } catch (error) {
+    document.getElementById("output").innerHTML = "<b>Error</b>";
+  }
+}
